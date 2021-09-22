@@ -1,0 +1,59 @@
+@import "partials/utils";
+
+.friends {
+  h3 {
+    margin: 0.4rem 0;
+  }
+  p {
+    margin-bottom: 0.6rem;
+  }
+}
+
+.friendTile {
+  @include flex(row, center, space-between);
+  background-color: $tileColor;
+  margin-bottom: 1rem;
+  width: 98%;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.2rem rgba(69, 69, 69, 0.1);
+}
+
+%btn {
+  color: $tileColor;
+  text-align: center;
+  border: none;
+  border-radius: 0.3rem;
+  margin-left: 0.2rem;
+  cursor: pointer;
+  @include flex(row, center, center);
+  width: 2.4rem;
+  height: 1.5rem;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.actionBtns {
+  @include flex();
+  button:first-child {
+    @extend %btn;
+    background-color: $gradient1;
+  }
+  button:last-child {
+    @extend %btn;
+    background-color: $simplyRed;
+  }
+}
+
+.pendingList {
+  max-height: 30vh;
+  overflow-y: auto;
+  @extend %scroll;
+}
+
+.friendList {
+  max-height: 44vh;
+  overflow-y: auto;
+  @extend %scroll;
+}

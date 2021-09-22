@@ -1,0 +1,58 @@
+@import "partials/utils";
+
+main {
+  min-height: 100vh;
+  background: linear-gradient(to top right, $gradient1, $gradient2);
+
+  .glass {
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(2rem);
+    min-height: 100vh;
+    width: 100%;
+    @include flex();
+  }
+}
+
+.board {
+  flex: 2.5;
+  background-color: rgba(244, 244, 244, 0.7);
+  height: 94vh;
+  margin-top: 3vh;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1.5rem rgba(69, 69, 69, 0.2);
+  padding: 0 4rem;
+  @include flex(column);
+}
+
+.rooms {
+  flex: 1;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.friends {
+  flex: 1;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.logout {
+  button {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    background-color: $simplyRed;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    &:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+}

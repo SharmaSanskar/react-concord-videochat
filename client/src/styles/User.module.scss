@@ -1,0 +1,27 @@
+@import "partials/utils";
+
+.userTile {
+  @include flex(row, center, space-between);
+  background-color: $tileColor;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.2rem rgba(69, 69, 69, 0.1);
+}
+
+.userActions {
+  button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    background-color: $gradient2;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+    margin-left: 0.2rem;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

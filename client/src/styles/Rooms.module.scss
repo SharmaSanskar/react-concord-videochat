@@ -1,0 +1,79 @@
+@import "partials/utils";
+
+%tile {
+  background-color: $tileColor;
+  margin-top: 0.6rem;
+  width: 98%;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.2rem rgba(69, 69, 69, 0.1);
+  cursor: pointer;
+}
+
+.roomTile {
+  @extend %tile;
+}
+
+.activeTile {
+  @extend %tile;
+  background-color: darken($color: $tileColor, $amount: 8);
+}
+
+%btn {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  background-color: $gradient2;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.createBtn {
+  @extend %btn;
+  width: 98%;
+  margin: 0.5rem 0;
+}
+
+.popup {
+  position: absolute;
+  top: 30%;
+  bottom: 30%;
+  left: 35%;
+  right: 35%;
+  background-color: #dcedf5;
+  overflow: auto;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.popup {
+  h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  input {
+    width: 60%;
+    display: block;
+    border: 1px solid black;
+    margin: 0.6rem auto 1rem;
+  }
+
+  button {
+    @extend %btn;
+    width: 60%;
+  }
+}
+
+.roomList {
+  overflow-y: auto;
+  max-height: 69vh;
+  @extend %scroll;
+}

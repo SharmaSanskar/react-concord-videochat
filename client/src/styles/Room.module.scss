@@ -1,0 +1,108 @@
+@import "partials/utils";
+
+.room {
+  width: 100%;
+}
+
+.roomInfo {
+  @include flex(row, center, space-between);
+  width: 100%;
+  margin: 1rem 0rem;
+}
+
+%btn {
+  color: $tileColor;
+  text-align: center;
+  border: none;
+  border-radius: 0.3rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+  @include flex(row, center, center);
+  width: 8rem;
+  height: 1.4rem;
+  &:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.roomActions {
+  @include flex(column);
+  button:first-child {
+    @extend %btn;
+    background-color: $gradient2;
+  }
+  button:last-child {
+    @extend %btn;
+    background-color: $simplyRed;
+  }
+}
+
+.backBtn {
+  margin-top: 0.8rem;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.7;
+  @include flex(row, center, space-between);
+  &:hover {
+    opacity: 0.8;
+  }
+
+  span {
+    margin-left: 0.3rem;
+  }
+}
+
+.roomCall {
+  @extend %btn;
+  background-color: $gradient2;
+  width: 20%;
+  height: 2rem;
+}
+
+.memberTile {
+  @include flex(row, center, space-between);
+  background-color: $tileColor;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.2rem rgba(69, 69, 69, 0.1);
+
+  button {
+    @extend %btn;
+    background: $simplyRed;
+    width: 3rem;
+  }
+}
+
+.popup {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 30%;
+  right: 30%;
+  background-color: #dcedf5;
+  overflow: auto;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1.5rem 2rem;
+}
+
+.friendTile {
+  @include flex(row, center, space-between);
+  background-color: $tileColor;
+  margin-top: 0.8rem;
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.2rem rgba(69, 69, 69, 0.1);
+
+  button {
+    @extend %btn;
+    background: $gradient1;
+    width: 2.4rem;
+  }
+}

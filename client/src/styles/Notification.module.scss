@@ -1,0 +1,41 @@
+@import "partials/utils";
+
+.notification {
+  min-height: 100vh;
+  @include flex(column, center, center);
+
+  h1 {
+    color: $tileColor;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+%btn {
+  @include flex(row, center, center);
+  color: $tileColor;
+  text-align: center;
+  border: none;
+  border-radius: 0.3rem;
+  margin-left: 0.2rem;
+  cursor: pointer;
+  padding: 0.6rem 1.8rem;
+  font-size: 1.2rem;
+  transition: all 0.2s ease-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.btns {
+  @include flex(row, center, space-around);
+  width: 25%;
+  button:first-child {
+    @extend %btn;
+    background-color: $justGreen;
+  }
+  button:last-child {
+    @extend %btn;
+    background-color: $simplyRed;
+  }
+}

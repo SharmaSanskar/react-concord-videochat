@@ -1,0 +1,166 @@
+@import "partials/utils";
+
+.background {
+  min-height: 100vh;
+  background: linear-gradient(to top right, $gradient1, $gradient2);
+  @include flex(row, center, center);
+
+  h1 {
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  h4 {
+    margin-bottom: 1.2rem;
+  }
+}
+
+%glass {
+  min-height: 80vh;
+  width: 40%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  );
+  border-radius: 1.2rem;
+  z-index: 10;
+  backdrop-filter: blur(2rem);
+  @include flex(column, center, center);
+}
+
+.registerGlass {
+  @extend %glass;
+}
+
+.loginGlass {
+  @extend %glass;
+  min-height: 65vh;
+  width: 40%;
+}
+
+input {
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  );
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  width: 100%;
+
+  &:focus {
+    outline: 2px solid white;
+  }
+}
+
+form {
+  width: 60%;
+  @include flex(column, center);
+
+  .formGroup {
+    width: 100%;
+  }
+}
+
+label {
+  display: block;
+  font-size: 0.75rem;
+  margin: 0.8rem 0 0.3rem 0;
+  text-transform: uppercase;
+}
+
+.btnSubmit {
+  background-image: linear-gradient(
+    to right,
+    $gradient2 0%,
+    $gradient1 51%,
+    $gradient2 100%
+  );
+  margin: 1.2rem 0 1.5rem 0;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.7rem 1.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 0.5rem;
+  background-size: 200% auto;
+  box-shadow: 0 0 2rem rgba(238, 238, 238, 0.8);
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background-position: right center;
+    opacity: 0.8;
+  }
+}
+
+.error {
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+  font-weight: bold;
+  text-align: center;
+  color: $simplyRed;
+}
+
+.navigate {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+// Circles
+%circle {
+  border-radius: 50%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  );
+  position: absolute;
+}
+
+.circle1 {
+  @extend %circle;
+  height: 16rem;
+  width: 16rem;
+  bottom: 3%;
+  left: 18%;
+}
+
+.circle2 {
+  @extend %circle;
+  height: 20rem;
+  width: 20rem;
+  top: 5%;
+  right: 12%;
+}
+
+.circle3 {
+  @extend %circle;
+  height: 10rem;
+  width: 10rem;
+  top: 4%;
+  left: 22%;
+}
+
+.circle4 {
+  @extend %circle;
+  height: 15rem;
+  width: 15rem;
+  top: 12%;
+  left: 16%;
+}
+
+.circle5 {
+  @extend %circle;
+  height: 12rem;
+  width: 12rem;
+  bottom: 5%;
+  right: 20%;
+}
