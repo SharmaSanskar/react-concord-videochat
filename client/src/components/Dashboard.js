@@ -34,15 +34,16 @@ const Dashboard = () => {
   const handleLogout = async () => {
     setError("");
     try {
+      const uid = loggedUser.uid;
       dispatch(
         updateUserStatus({
-          id: loggedUser.uid,
+          id: uid,
           availabilityStatus: false,
         })
       );
-      dispatch(updateUserTopic(loggedUser.uid, ""));
-      await logout();
+      dispatch(updateUserTopic(uid, ""));
       history.push("/login");
+      setTimeout(() => logout(), 1000);
     } catch (err) {
       setError(err.message);
     }

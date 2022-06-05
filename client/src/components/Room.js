@@ -49,12 +49,6 @@ const Room = () => {
     });
   };
 
-  const startCall = () => {
-    if (currentRoom.members <= 1) {
-      return;
-    }
-  };
-
   useEffect(() => {
     const unsub = firestore
       .collection("rooms")

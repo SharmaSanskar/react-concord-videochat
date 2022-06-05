@@ -69,6 +69,7 @@ export const updateUserStatus =
       await userRef.update({
         isAvailable: availabilityStatus,
       });
+      if (availabilityStatus) window.location.reload();
     } catch (err) {
       console.log(err.message);
       dispatch({

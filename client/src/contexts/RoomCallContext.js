@@ -92,7 +92,6 @@ export const RoomCallProvider = ({ children }) => {
         }
       });
       peersRef.current = [];
-      window.location.reload();
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -142,14 +141,10 @@ export const RoomCallProvider = ({ children }) => {
       config: {
         iceServers: [
           {
-            urls: "stun:numb.viagenie.ca",
-            username: "sultan1640@gmail.com",
-            credential: "98376683",
-          },
-          {
-            urls: "turn:numb.viagenie.ca",
-            username: "sultan1640@gmail.com",
-            credential: "98376683",
+            urls: [
+              "stun:stun1.l.google.com:19302",
+              "stun:stun2.l.google.com:19302",
+            ],
           },
         ],
       },

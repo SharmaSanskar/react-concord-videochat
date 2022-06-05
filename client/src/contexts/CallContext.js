@@ -58,14 +58,10 @@ export const CallProvider = ({ children }) => {
       config: {
         iceServers: [
           {
-            urls: "stun:numb.viagenie.ca",
-            username: "sultan1640@gmail.com",
-            credential: "98376683",
-          },
-          {
-            urls: "turn:numb.viagenie.ca",
-            username: "sultan1640@gmail.com",
-            credential: "98376683",
+            urls: [
+              "stun:stun1.l.google.com:19302",
+              "stun:stun2.l.google.com:19302",
+            ],
           },
         ],
       },
@@ -150,7 +146,6 @@ export const CallProvider = ({ children }) => {
     );
 
     if (connectionRef.current) connectionRef.current.destroy();
-    window.location.reload();
   };
 
   const connectToSocket = (userId) => {
@@ -164,7 +159,6 @@ export const CallProvider = ({ children }) => {
       setCall({});
       setCallAccepted(false);
       if (connectionRef.current) connectionRef.current.destroy();
-      window.location.reload();
     });
 
     socket.on(

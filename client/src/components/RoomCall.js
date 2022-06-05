@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRoomCall } from "../contexts/RoomCallContext";
 import styles from "../styles/VideoCall.module.scss";
-import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
 import RoomVideo from "./RoomVideo";
 import Video from "./Video";
 
 const RoomCall = () => {
   const { peersRef, endRoomCall, roomCall } = useRoomCall();
-  const [isMute, setIsMute] = useState(true);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => () => endRoomCall(roomCall.roomId), []);
@@ -19,16 +17,7 @@ const RoomCall = () => {
           <Video />
         </div>
         {peersRef.current.map((peer) => (
-          <div
-            key={peer.peerId}
-            className={styles.otherVideo}
-            onDoubleClick={() => setIsMute((prev) => !prev)}
-          >
-            <RoomVideo peer={peer.peer} isMute={isMute} />
-            <div className={styles.icon}>
-              {isMute ? <FaMicrophoneSlash /> : <FaMicrophone />}
-            </div>
-          </div>
+          <RoomVideo key={peer.peerId} peer={peer.peer} />
         ))}
       </div>
       <div className={styles.actionBar}>

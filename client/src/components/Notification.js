@@ -4,8 +4,7 @@ import styles from "../styles/Notification.module.scss";
 
 const Notification = ({ isRoomCall }) => {
   const { call, answerCall, leaveCall } = useCall();
-  const { roomCall, setRoomCall, answerRoomCall, leaveRoomCall } =
-    useRoomCall();
+  const { roomCall, setRoomCall, answerRoomCall } = useRoomCall();
   return (
     <>
       {isRoomCall ? (
@@ -26,15 +25,6 @@ const Notification = ({ isRoomCall }) => {
         </div>
       )}
     </>
-    // <>
-    //   <div className={styles.notification}>
-    //     <h1>{call.name} is calling</h1>
-    //     <div className={styles.btns}>
-    //       <button onClick={() => answerCall()}>Answer</button>
-    //       <button onClick={() => leaveCall(call.from)}>Decline</button>
-    //     </div>
-    //   </div>
-    // </>
   );
 };
 
